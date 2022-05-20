@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "target": "es2020",
+    "module": "commonjs",
+    "lib": ["es2018", "DOM"]
+  },
+  "include": [
+    "graphql/**/*.ts",
+    "graphql/**/*.js",
+    "**/*.ts",
+    "**/*.js"
+  ]
+}
