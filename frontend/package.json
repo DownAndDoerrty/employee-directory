@@ -1,0 +1,11 @@
+{
+  "name": "employee-directory-frontend",
+  "version": "1.0.0",
+  "description": "Employee directory frontend for Postlight challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
