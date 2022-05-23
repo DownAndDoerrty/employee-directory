@@ -13,6 +13,7 @@ datasource db {
 model Employee {
   id           String     @id
   email        String     @unique
+  phoneNumber  String
   forename     String
   surname      String
   profileImage String?
@@ -20,7 +21,7 @@ model Employee {
   departmentId String
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
-  department   Department @relation(fields: [departmentId], references: [id])
+  department   Department? @relation(fields: [departmentId], references: [id])
 }
 
 model Department {
