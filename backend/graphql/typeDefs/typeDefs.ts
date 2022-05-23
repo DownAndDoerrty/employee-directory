@@ -1,13 +1,17 @@
 import { DocumentNode } from 'graphql';
 import { TypeSource } from '@graphql-tools/utils';
 
-// Imports for model type definitions
+// Import for model type definitions
 import { modelTypeDefs } from './modelTypeDefs';
 
-// Imports for query definitions
+// Import for query definitions
 import { queryTypeDefs } from './queryTypeDefs';
+
+// Import for query definitions
+import { mutationTypeDefs } from './mutationTypeDefs';
 
 export const typeDefs: TypeSource = [
   ...queryTypeDefs,
+  ...mutationTypeDefs,
   ...modelTypeDefs,
 ] as Array<DocumentNode>;

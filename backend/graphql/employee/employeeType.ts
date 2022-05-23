@@ -11,5 +11,7 @@ export const EmployeeTypeDefinition = gql`
     title:        String
     departmentId:   String
     department:   Department
+    createdAt:   DateTime
+    updatedAt:   DateTime
   }
 `;

@@ -5,5 +5,7 @@ export const DepartmentTypeDefinition = gql`
     id:        ID!
     name:      String
     employees: [Employee]
+    createdAt: DateTime
+    updatedAt: DateTime
   }
 `;

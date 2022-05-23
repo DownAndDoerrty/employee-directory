@@ -11,23 +11,23 @@ datasource db {
 }
 
 model Employee {
-  id           String     @id
+  id           String     @id @default(uuid())
   email        String     @unique
   phoneNumber  String
   forename     String
   surname      String
-  profileImage String?
+  profileImage String?    @default("https://www.drupal.org/files/issues/default-avatar.png")
   title        String
   departmentId String
   createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
-  department   Department? @relation(fields: [departmentId], references: [id])
+  updatedAt    DateTime   @updatedAt @default(now())
+  department   Department? @relation(fields: [departmentId], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model Department {
-  id        String     @id
-  name      String
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  employees Employee[] @relation()
+  id        String         @id @default(uuid())
+  name      String         @unique
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt @default(now())
+  employees Employee[]     @relation()
 }
