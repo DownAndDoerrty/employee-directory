@@ -1,44 +1,52 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 import EmployeeTableHeader from './EmployeeTableHeader';
 import EmployeeTableFooter from './EmployeeTableFooter';
 import EmployeeTableBody from './EmployeeTableBody';
-
-const EMPLOYEES_QUERY = gql`
-  query EmployeesQuery {
-    employees {
-      email
-      phoneNumber
-      forename
-      surname
-      profileImage
-      title
-      department {
-        name
-      }
-    }
-  }
-`;
+import { EMPLOYEES_QUERY } from '../graphql/employeesQuery';
+import { Employee } from '../utils/employeeType';
 
 const EmployeeTable = () => {
   const [pageNumber, setPageNumber] = useState(0);
+  const [searchField, setSearchField] = useState('');
   const [limit, setLimit] = useState(10);
 
   const { loading, error, data } = useQuery(EMPLOYEES_QUERY);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
 
-  const employeeData = Array.from({ length: Math.ceil(data.employees.length / limit) }, (_v, i) =>
-    data.employees.slice(i * limit, i * limit + limit)
+  // Filter all employee data on a given substring from search input
+  const filteredEmployeeData =
+    // Determine if anything has been typed in the input
+    searchField.length > 0
+      ? data.employees.filter((employee: Employee) => {
+          // Split each employee object into an array of it's values and then search that array for the substring
+          return (Object.values(employee) as Array<string>).find((employeeArray) => {
+            if (employeeArray.includes(searchField)) {
+              return employee;
+            }
+          });
+        })
+      : // Return all employee data if nothing has been searched for
+        data.employees;
+
+  // Split employee data retrieved from GraphQL endpoint by number of rows requested
+  const employeeData = Array.from(
+    // Determine the number of pages by divided the employee records by requested rows
+    { length: Math.ceil(filteredEmployeeData.length / limit) },
+    // Split the employee data into segments of the requested length
+    (_v, i) => filteredEmployeeData.slice(i * limit, i * limit + limit)
   );
 
-  console.log({ pageNumber });
   return (
     <div>
       <table>
-        <EmployeeTableHeader employeeCount={data.employees.length} />
+        <EmployeeTableHeader
+          setSearchField={setSearchField}
+          employeeCount={filteredEmployeeData.length}
+        />
         <EmployeeTableBody employeeData={employeeData} pageNumber={pageNumber} />
         <EmployeeTableFooter
           pageNumber={pageNumber}

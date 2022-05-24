@@ -25,7 +25,8 @@ class EmployeeTableFooter extends Component<EmployeeTableFooterProps> {
               text="<"
               disabled={this.props.pageNumber <= 0}
             />
-            {this.props.employeeData.map((object, key) => {
+            {/* Create buttons based on number of pages */}
+            {this.props.employeeData.map((_employee, key) => {
               return (
                 <Button
                   key={key}
