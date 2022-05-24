@@ -14,7 +14,7 @@ const context = new Context();
 const port = 4000;
 const app = express();
 const corsOptions = {
-  origin: 'http://localhost:4200',
+  origin: 'http://localhost:3000',
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));

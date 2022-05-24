@@ -10,8 +10,6 @@
     "lib": ["es2018", "DOM"]
   },
   "include": [
-    "graphql/**/*.ts",
-    "graphql/**/*.js",
     "**/*.ts",
     "**/*.js"
   ]
