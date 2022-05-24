@@ -1,0 +1,34 @@
+tfoot > tr > td {
+  border: none;
+}
+
+tfoot > * > * > button {
+  padding: 0.5rem 0.75rem;
+  color: black;
+  background-color: white;
+  border: 1px solid blue;
+  margin: 4px;
+}
+
+tfoot > * > * > button:last-child {
+  margin: 4px 0 4px 4px;
+}
+
+button[disabled] {
+  background-color: #d8dae1;
+}
+
+button:focus {
+  filter: none;
+}
+
+#tableButtonContainer {
+  padding: 0.25rem 0;
+  text-align: end;
+}
+
+#tableInfoContainer {
+  margin: 0;
+  border: none;
+  padding: 0.25rem 0rem;
+}

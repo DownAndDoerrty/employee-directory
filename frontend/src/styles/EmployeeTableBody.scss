@@ -1,0 +1,21 @@
+#directoryImage {
+  background-color: #d8dae1;
+  height: 52px;
+  width: 52px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+#directoryCheckbox {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: 0 auto;
+}
+
+#directoryCheckbox::after {
+  position: absolute;
+  top: .125em;
+  left: .25em;
+}

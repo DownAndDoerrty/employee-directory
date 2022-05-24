@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { Component } from 'react';
+import { Component, Dispatch, SetStateAction } from 'react';
 import SearchInput from './SearchInput';
+
+import '../styles/EmployeeTableHeader.scss';
 
 interface EmployeeTableFooterProps {
   employeeCount: number;
-  setSearchField: React.Dispatch<React.SetStateAction<string>>;
+  setSearchField: Dispatch<SetStateAction<string>>;
 }
 
 class EmployeeTableHeader extends Component<EmployeeTableFooterProps> {
@@ -19,11 +21,12 @@ class EmployeeTableHeader extends Component<EmployeeTableFooterProps> {
           <td colSpan={3} id="employeeDataContainer">
             <p>Total Employees: {this.props.employeeCount}</p>
           </td>
-          <td colSpan={3} id="searchInputContainer">
+          <td colSpan={4} id="searchInputContainer">
             <SearchInput setSearchField={this.props.setSearchField} />
           </td>
         </tr>
         <tr>
+          <th />
           <th id="directoryImageHeader" />
           <th>Forename</th>
           <th>Surname</th>

@@ -11,6 +11,7 @@ import { Employee } from '../utils/employeeType';
 const EmployeeTable = () => {
   const [pageNumber, setPageNumber] = useState(0);
   const [searchField, setSearchField] = useState('');
+  const [selectedEmployee, setSelectedEmployee] = useState([]);
   const [limit, setLimit] = useState(10);
 
   const { loading, error, data } = useQuery(EMPLOYEES_QUERY);
@@ -40,6 +41,7 @@ const EmployeeTable = () => {
     (_v, i) => filteredEmployeeData.slice(i * limit, i * limit + limit)
   );
 
+  console.log({ selectedEmployee });
   return (
     <div>
       <table>
@@ -47,7 +49,12 @@ const EmployeeTable = () => {
           setSearchField={setSearchField}
           employeeCount={filteredEmployeeData.length}
         />
-        <EmployeeTableBody employeeData={employeeData} pageNumber={pageNumber} />
+        <EmployeeTableBody
+          employeeData={employeeData}
+          pageNumber={pageNumber}
+          selectedEmployee={selectedEmployee}
+          setSelectedEmployee={setSelectedEmployee}
+        />
         <EmployeeTableFooter
           pageNumber={pageNumber}
           setPageNumber={setPageNumber}

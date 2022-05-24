@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { Component } from 'react';
+import { Component, Dispatch, SetStateAction } from 'react';
 
 import { Employee } from '../utils/employeeType';
 import Button from './Button';
+import '../styles/EmployeeTableFooter.scss';
 
 interface EmployeeTableFooterProps {
   employeeData: Array<Array<Employee>>;
   pageNumber: number;
-  setPageNumber: React.Dispatch<React.SetStateAction<number>>;
+  setPageNumber: Dispatch<SetStateAction<number>>;
 }
 
 class EmployeeTableFooter extends Component<EmployeeTableFooterProps> {
@@ -19,7 +20,7 @@ class EmployeeTableFooter extends Component<EmployeeTableFooterProps> {
     return (
       <tfoot>
         <tr>
-          <td colSpan={6} id="tableButtonContainer">
+          <td colSpan={7} id="tableButtonContainer">
             <Button
               handleClick={() => this.props.setPageNumber(this.props.pageNumber - 1)}
               text="<"

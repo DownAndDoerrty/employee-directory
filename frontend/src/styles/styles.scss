@@ -8,11 +8,6 @@ body {
   grid-template-columns: 24px 1fr 24px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 header > h4 {
   margin: 1vh 0vw;
 }
@@ -22,6 +17,7 @@ table {
 }
 
 td, th {
+  border: none;
   padding: 0.25rem 0.75rem;
 }
 
@@ -30,63 +26,8 @@ td, th {
   width: 52px;
 }
 
-#directoryImage {
-  background-color: #d8dae1;
-  height: 52px;
-  width: 52px;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  border-radius: 50%;
-}
 
-tfoot > tr > td {
-  border: none;
-}
 
-tfoot > * > * > button {
-  padding: 0.5rem 0.75rem;
-  color: black;
-  background-color: white;
-  border: 1px solid blue;
-  margin: 4px;
-}
-
-tfoot > * > * > button:last-child {
-  margin: 4px 0 4px 4px;
-}
-
-button[disabled] {
-  background-color: #d8dae1;
-}
-
-button:focus {
-  filter: none;
-}
-
-#tableButtonContainer {
-  padding: 0.25rem 0;
-  text-align: end;
-}
-
-#tableInfoContainer {
-  margin: 0;
-  border: none;
-  padding: 0.25rem 0rem;
-}
-
-#tableInfoContainer > td, th {
-  border: none;
-}
-
-#searchInputContainer {
-  text-align: end;
-  padding: 0.25rem 0;
-}
-
-#employeeDataContainer {
-  padding: 0.25rem 0;
-}
 
 @media (max-width: 945px) {
   #directoryImage, #directoryImageCell, #directoryImageHeader {
