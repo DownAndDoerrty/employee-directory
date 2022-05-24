@@ -5,8 +5,8 @@ import { useQuery } from '@apollo/client';
 import EmployeeTableHeader from './EmployeeTableHeader';
 import EmployeeTableFooter from './EmployeeTableFooter';
 import EmployeeTableBody from './EmployeeTableBody';
-import { EMPLOYEES_QUERY } from '../graphql/employeesQuery';
-import { Employee } from '../utils/employeeType';
+import { EMPLOYEES_QUERY } from '../../graphql/employeesQuery';
+import { Employee } from '../../graphql/types/employeeType';
 
 const EmployeeTable = () => {
   const [pageNumber, setPageNumber] = useState(0);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component, Dispatch, SetStateAction } from 'react';
 
-import { Employee } from '../utils/employeeType';
+import { Employee } from '../../graphql/types/employeeType';
 import DirectoryImage from './DirectoryImage';
 import '../styles/EmployeeTableBody.scss';
 
