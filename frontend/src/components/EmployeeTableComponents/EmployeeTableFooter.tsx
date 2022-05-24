@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Component, Dispatch, SetStateAction } from 'react';
 
-import { Employee } from '../utils/employeeType';
-import Button from './Button';
-import '../styles/EmployeeTableFooter.scss';
+import { Employee } from '../../graphql/types/employeeType';
+import Button from '../Button';
+import '../../styles/EmployeeTableFooter.scss';
 
 interface EmployeeTableFooterProps {
   employeeData: Array<Array<Employee>>;

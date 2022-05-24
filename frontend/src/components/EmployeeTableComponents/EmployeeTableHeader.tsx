@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Component, Dispatch, SetStateAction } from 'react';
 import SearchInput from './SearchInput';
 
-import '../styles/EmployeeTableHeader.scss';
+import '../../styles/EmployeeTableHeader.scss';
 
 interface EmployeeTableFooterProps {
   employeeCount: number;

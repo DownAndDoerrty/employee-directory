@@ -3,7 +3,7 @@ import { Component, Dispatch, SetStateAction } from 'react';
 
 import { Employee } from '../../graphql/types/employeeType';
 import DirectoryImage from './DirectoryImage';
-import '../styles/EmployeeTableBody.scss';
+import '../../styles/EmployeeTableBody.scss';
 
 interface EmployeeTableBodyProps {
   employeeData: Array<Array<Employee>>;
