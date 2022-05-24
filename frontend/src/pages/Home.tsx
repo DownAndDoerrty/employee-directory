@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 
-import EmployeeTable from './EmployeeTable';
+import EmployeeTable from '../components/EmployeeTable';
 
 class Home extends Component {
   constructor(props: unknown | Readonly<unknown>) {

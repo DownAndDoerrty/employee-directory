@@ -6,6 +6,10 @@
   grid-column: auto;
 } */
 
+:root {
+  --accent: #ad00b3;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -43,4 +47,32 @@ td, th {
   margin: 0 auto;
   width: 100%;
   border-radius: 50%;
+}
+
+tfoot > tr > td {
+  border: none;
+}
+
+tfoot > * > * > button {
+  color: black;
+  background-color: white;
+  border: 1px solid blue;
+  margin: 4px;
+}
+
+button[disabled] {
+  background-color: #d8dae1;
+}
+
+button:focus {
+  filter: none;
+}
+
+#tableButtonContainer {
+  text-align: end;
+}
+
+#tableInfoContainer {
+  margin: 0;
+  border: none;
 }

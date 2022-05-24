@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
-import DirectoryImage from './DirectoryImage';
+
+import EmployeeTableHeader from './EmployeeTableHeader';
+import EmployeeTableFooter from './EmployeeTableFooter';
+import EmployeeTableBody from './EmployeeTableBody';
 
 const EMPLOYEES_QUERY = gql`
   query EmployeesQuery {
@@ -35,22 +38,13 @@ const EmployeeTable = () => {
   return (
     <div>
       <table>
-        <tbody>
-          {employeeData[pageNumber].map(
-            ({ email, forename, surname, profileImage, title, phoneNumber }) => (
-              <tr key={email}>
-                <td id="directoryImageCell">
-                  <DirectoryImage imageSrc={profileImage} />
-                </td>
-                <td>{forename}</td>
-                <td>{surname}</td>
-                <td>{title}</td>
-                <td>{email}</td>
-                <td>{phoneNumber}</td>
-              </tr>
-            )
-          )}
-        </tbody>
+        <EmployeeTableHeader employeeCount={data.employees.length} />
+        <EmployeeTableBody employeeData={employeeData} pageNumber={pageNumber} />
+        <EmployeeTableFooter
+          pageNumber={pageNumber}
+          setPageNumber={setPageNumber}
+          employeeData={employeeData}
+        />
       </table>
     </div>
   );
