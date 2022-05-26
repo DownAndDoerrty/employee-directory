@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Component, Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useMutation } from '@apollo/client';
 
 import '../../styles/EmployeeTableHeader.scss';
@@ -58,36 +58,30 @@ interface EmployeeTableHeaderProps {
   setSelectedEmployees: Dispatch<SetStateAction<Array<string>>>;
 }
 
-class EmployeeTableHeader extends Component<EmployeeTableHeaderProps> {
-  constructor(props: EmployeeTableHeaderProps | Readonly<EmployeeTableHeaderProps>) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <thead>
-        <tr id="tableInfoContainer">
-          <td colSpan={5} id="employeeDataContainer">
-            <h5 id="employeeCountContainer">Employees: {this.props.employeeCount}</h5>
-          </td>
-          <RecordOperations
-            selectedEmployees={this.props.selectedEmployees}
-            setSelectedEmployees={this.props.setSelectedEmployees}
-          />
-        </tr>
-        <tr>
-          <th />
-          <th id="directoryImageHeader" />
-          <th>Forename</th>
-          <th>Surname</th>
-          <th>Job Title</th>
-          <th>Department</th>
-          <th>Email</th>
-          <th>Phone Number</th>
-        </tr>
-      </thead>
-    );
-  }
-}
+const EmployeeTableHeader = (props: EmployeeTableHeaderProps) => {
+  return (
+    <thead>
+      <tr id="tableInfoContainer">
+        <td colSpan={5} id="employeeDataContainer">
+          <h5 id="employeeCountContainer">Employees: {props.employeeCount}</h5>
+        </td>
+        <RecordOperations
+          selectedEmployees={props.selectedEmployees}
+          setSelectedEmployees={props.setSelectedEmployees}
+        />
+      </tr>
+      <tr>
+        <th />
+        <th id="directoryImageHeader" />
+        <th>Forename</th>
+        <th>Surname</th>
+        <th>Job Title</th>
+        <th>Department</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+  );
+};
 
 export default EmployeeTableHeader;

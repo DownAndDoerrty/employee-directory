@@ -28,11 +28,16 @@ export const UpdateEmployeeMutationResolver = {
     _parent: Employee,
     { input }: { input: Omit<Employee, 'updatedAt' | 'createdAt'> },
     context: Context,
-  ): Promise<Employee> =>
-    await context.prisma.employee.update({
-      where: {
-        id: input.id,
-      },
-      data: input,
-    }),
+  ): Promise<Employee> => {
+    try {
+      return await context.prisma.employee.update({
+        where: {
+          id: input.id,
+        },
+        data: input,
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
 };

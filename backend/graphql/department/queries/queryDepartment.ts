@@ -10,10 +10,15 @@ export const QueryDepartmentDefinition = gql`
 `;
 
 export const QueryDepartmentResolver = {
-  department: async (_parent: Department, { departmentId }: { departmentId: string }, context: Context): Promise<Department> =>
-    await context.prisma.department.findUnique({
-      where: {
-        id: departmentId,
-      },
-    }),
+  department: async (_parent: Department, { departmentId }: { departmentId: string }, context: Context): Promise<Department> => {
+    try {
+      return await context.prisma.department.findUnique({
+        where: {
+          id: departmentId,
+        },
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
 };

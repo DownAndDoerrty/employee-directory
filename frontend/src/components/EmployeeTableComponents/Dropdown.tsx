@@ -7,37 +7,31 @@ interface DropdownProps {
   departments: Array<{ name: string }> | undefined;
 }
 
-class Dropdown extends Component<DropdownProps> {
-  constructor(props: DropdownProps | Readonly<DropdownProps>) {
-    super(props);
-  }
-
-  handleDropdownChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    this.props.setSelectedDepartment(event.target.value);
+const Dropdown = (props: DropdownProps) => {
+  const handleDropdownChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    props.setSelectedDepartment(event.target.value);
   };
 
-  render() {
-    return (
-      <div id="inputAndDropdownContainer">
-        <label htmlFor="departmentDropdown">Select Department</label>
-        <select
-          name="departmentDropdown"
-          onChange={(event) => this.handleDropdownChange(event)}
-          value={this.props.selectedDepartment}>
-          <option key="All" value="All">
-            All
-          </option>
-          {this.props.departments
-            ? this.props.departments.map(({ name }) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))
-            : null}
-        </select>
-      </div>
-    );
-  }
-}
+  return (
+    <div id="inputAndDropdownContainer">
+      <label htmlFor="departmentDropdown">Select Department</label>
+      <select
+        name="departmentDropdown"
+        onChange={(event) => handleDropdownChange(event)}
+        value={props.selectedDepartment}>
+        <option key="All" value="All">
+          All
+        </option>
+        {props.departments
+          ? props.departments.map(({ name }) => (
+              <option key={name} value={name}>
+                {name}
+              </option>
+            ))
+          : null}
+      </select>
+    </div>
+  );
+};
 
 export default Dropdown;

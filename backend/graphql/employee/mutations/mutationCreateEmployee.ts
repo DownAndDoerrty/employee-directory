@@ -27,7 +27,22 @@ export const MutationCreateEmployeeResolver = {
     _parent: Employee,
     { input }: { input: Omit<Employee, 'updatedAt' | 'createdAt' | 'id'> },
     context: Context,
-  ): Promise<Employee> => await context.prisma.employee.create({
-    data: input,
-  }),
+  ): Promise<Employee> => {
+    try {
+      const departmentExists = await context.prisma.department.findFirst({
+        where: {
+          name: input.departmentName
+        },
+      });
+
+      if (departmentExists) {
+        return await context.prisma.employee.create({
+          data: input,
+        });
+      };
+
+    } catch (error) {
+      throw new Error(error);
+    };
+  },
 };

@@ -13,50 +13,47 @@ interface EmployeeTableFooterProps {
   setOffset: Dispatch<SetStateAction<number>>;
 }
 
-class EmployeeTableFooter extends Component<EmployeeTableFooterProps> {
-  constructor(props: EmployeeTableFooterProps | Readonly<EmployeeTableFooterProps>) {
-    super(props);
-  }
+const EmployeeTableFooter = (props: EmployeeTableFooterProps) => {
+  const handleButtonClick = (key: number) => {
+    props.setOffset(key * props.limit);
+    props.setPageNumber(key);
+  };
 
-  handleButtonClick(key: number) {
-    this.props.setOffset(key * this.props.limit);
-    this.props.setPageNumber(key);
-  }
+  const numberOfPages = props.employeeRecordsCount / props.limit;
 
-  render() {
-    const numberOfPages = this.props.employeeRecordsCount / this.props.limit;
-    const pageButtons = [];
-    for (let i = 0; i < numberOfPages; i++) {
-      pageButtons.push(
-        <Button
-          key={i}
-          text={(i + 1).toString()}
-          disabled={i === this.props.pageNumber ? true : false}
-          handleClick={() => this.handleButtonClick(i)}
-        />
-      );
-    }
-    return (
-      <tfoot>
-        <tr>
-          <td colSpan={8} id="tableButtonContainer">
-            <Button
-              handleClick={() => this.handleButtonClick(this.props.pageNumber - 1)}
-              text="<"
-              disabled={this.props.pageNumber <= 0}
-            />
-            {/* Create buttons based on number of pages */}
-            {pageButtons}
-            <Button
-              handleClick={() => this.handleButtonClick(this.props.pageNumber + 1)}
-              text=">"
-              disabled={this.props.pageNumber >= numberOfPages - 1}
-            />
-          </td>
-        </tr>
-      </tfoot>
+  const pageButtons = [];
+
+  for (let i = 0; i < numberOfPages; i++) {
+    pageButtons.push(
+      <Button
+        key={i}
+        text={(i + 1).toString()}
+        disabled={i === props.pageNumber ? true : false}
+        handleClick={() => handleButtonClick(i)}
+      />
     );
   }
-}
+
+  return (
+    <tfoot>
+      <tr>
+        <td colSpan={8} id="tableButtonContainer">
+          <Button
+            handleClick={() => handleButtonClick(props.pageNumber - 1)}
+            text="<"
+            disabled={props.pageNumber <= 0}
+          />
+          {/* Create buttons based on number of pages */}
+          {pageButtons}
+          <Button
+            handleClick={() => handleButtonClick(props.pageNumber + 1)}
+            text=">"
+            disabled={props.pageNumber >= numberOfPages - 1}
+          />
+        </td>
+      </tr>
+    </tfoot>
+  );
+};
 
 export default EmployeeTableFooter;

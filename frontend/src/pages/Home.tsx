@@ -1,20 +1,13 @@
 import * as React from 'react';
-import { Component } from 'react';
 
 import EmployeeTable from '../components/EmployeeTableComponents/EmployeeTable';
 
-class Home extends Component {
-  constructor(props: unknown | Readonly<unknown>) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-        <EmployeeTable />
-      </div>
-    );
-  }
-}
+const Home = () => {
+  return (
+    <div>
+      <EmployeeTable />
+    </div>
+  );
+};
 
 export default Home;

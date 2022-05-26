@@ -19,84 +19,89 @@ export const QueryEmployeesResolver = {
     _parent: Employee,
     args: { offset: number, limit: number, departmentName: string, searchField: string },
     context: Context): Promise<{ records: Array<Employee>, count: number }> => {
-    let records: Employee[];
-    let count: number;
+    try {
 
-    if (args.departmentName !== 'All' && args.searchField.length === 0) {
-      records = await context.prisma.employee.findMany({
-        where: {
-          departmentName: args.departmentName
-        },
-        skip: args.offset,
-        take: args.limit
-      });
-      count = await context.prisma.employee.count({
-        where: {
-          departmentName: args.departmentName
-        }
-      });
-      return {
-        records,
-        count,
-      }
-    } else if (args.departmentName === 'All' && args.searchField.length > 0) {
-      records = await context.prisma.employee.findMany({
-        where: {
-          forename: {
-            contains: args.searchField,
-            mode: 'insensitive',
+      let records: Employee[];
+      let count: number;
+
+      if (args.departmentName !== 'All' && args.searchField.length === 0) {
+        records = await context.prisma.employee.findMany({
+          where: {
+            departmentName: args.departmentName,
           },
-        },
-        skip: args.offset,
-        take: args.limit
-      });
-      count = await context.prisma.employee.count({
-        where: {
-          forename: {
-            contains: args.searchField,
-            mode: 'insensitive',
-          }
-        }
-      });
-      return {
-        records,
-        count,
-      }
-    } else if (args.departmentName !== 'All' && args.searchField.length > 0) {
-      records = await context.prisma.employee.findMany({
-        where: {
-          departmentName: args.departmentName,
-          forename: {
-            contains: args.searchField,
-            mode: 'insensitive',
+          skip: args.offset,
+          take: args.limit,
+        });
+        count = await context.prisma.employee.count({
+          where: {
+            departmentName: args.departmentName,
           },
-        },
-        skip: args.offset,
-        take: args.limit
-      });
-      count = await context.prisma.employee.count({
-        where: {
-          departmentName: args.departmentName,
-          forename: {
-            contains: args.searchField,
-            mode: 'insensitive',
-          }
+        });
+        return {
+          records,
+          count,
         }
-      });
-      return {
-        records,
-        count,
-      }
-    } else {
-      records = await context.prisma.employee.findMany({
-        skip: args.offset,
-        take: args.limit
-      });
-      count = await context.prisma.employee.count();
-      return {
-        records,
-        count,
-      }
+      } else if (args.departmentName === 'All' && args.searchField.length > 0) {
+        records = await context.prisma.employee.findMany({
+          where: {
+            forename: {
+              contains: args.searchField,
+              mode: 'insensitive',
+            },
+          },
+          skip: args.offset,
+          take: args.limit
+        });
+        count = await context.prisma.employee.count({
+          where: {
+            forename: {
+              contains: args.searchField,
+              mode: 'insensitive',
+            }
+          }
+        });
+        return {
+          records,
+          count,
+        }
+      } else if (args.departmentName !== 'All' && args.searchField.length > 0) {
+        records = await context.prisma.employee.findMany({
+          where: {
+            departmentName: args.departmentName,
+            forename: {
+              contains: args.searchField,
+              mode: 'insensitive',
+            },
+          },
+          skip: args.offset,
+          take: args.limit,
+        });
+        count = await context.prisma.employee.count({
+          where: {
+            departmentName: args.departmentName,
+            forename: {
+              contains: args.searchField,
+              mode: 'insensitive',
+            }
+          }
+        });
+        return {
+          records,
+          count,
+        };
+      } else {
+        records = await context.prisma.employee.findMany({
+          skip: args.offset,
+          take: args.limit
+        });
+        count = await context.prisma.employee.count();
+        return {
+          records,
+          count,
+        };
+      };
+    } catch (error) {
+      throw new Error(error);
     }
   }
 };

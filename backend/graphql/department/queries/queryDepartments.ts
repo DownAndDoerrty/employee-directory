@@ -9,6 +9,11 @@ export const QueryDepartmentsDefinition = gql`
 `;
 
 export const QueryDepartmentsResolver = {
-  departments: async (_parent: Department, _args: undefined, context: Context): Promise<Array<Department>> =>
-    await context.prisma.department.findMany(),
+  departments: async (_parent: Department, _args: undefined, context: Context): Promise<Array<Department>> => {
+    try {
+      return await context.prisma.department.findMany();
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
 };

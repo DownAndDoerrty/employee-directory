@@ -9,10 +9,15 @@ export const QueryEmployeeDefinition = gql`
 `;
 
 export const QueryEmployeeResolver = {
-  employee: async (_parent: Employee, { employeeId }: { employeeId: string }, context: Context): Promise<Employee> =>
-    await context.prisma.employee.findUnique({
-      where: {
-        id: employeeId,
-      },
-    }),
+  employee: async (_parent: Employee, { employeeId }: { employeeId: string }, context: Context): Promise<Employee> => {
+    try {
+      return await context.prisma.employee.findUnique({
+        where: {
+          id: employeeId,
+        },
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
 };

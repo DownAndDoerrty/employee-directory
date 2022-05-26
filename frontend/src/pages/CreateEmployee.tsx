@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Component, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useMutation } from '@apollo/client';
 
 import '../styles/CreateEmployee.scss';
@@ -9,7 +9,7 @@ import Button from '../components/Button';
 
 // Button for handling creating a new employee record
 const CreateEmployeeRecordButton = (props: { createEmployeeInput: CreateEmployeeMutationType }) => {
-  const [createEmployee, { data, loading, error }] = useMutation(CREATE_EMPLOYEE_MUTATION);
+  const [createEmployee, { loading, error }] = useMutation(CREATE_EMPLOYEE_MUTATION);
   const [createDisabled, setCreateDisabled] = useState(true);
 
   // Handle creating employee
@@ -53,103 +53,97 @@ const CreateEmployeeRecordButton = (props: { createEmployeeInput: CreateEmployee
   );
 };
 
-class CreateEmployee extends Component<unknown, CreateEmployeeMutationType> {
-  constructor(props: unknown | Readonly<unknown>) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = {
-      email: '',
-      phoneNumber: '',
-      forename: '',
-      surname: '',
-      profileImage: '',
-      title: '',
-      departmentName: ''
-    };
-  }
+const CreateEmployee = () => {
+  const [createEmployeeData, setCreateEmployeeData] = useState({
+    email: '',
+    phoneNumber: '',
+    forename: '',
+    surname: '',
+    profileImage: '',
+    title: '',
+    departmentName: ''
+  });
 
-  handleChange(event) {
+  const handleCreateEmployeeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
-    this.setState((prevState) => ({ ...prevState, [id]: value }));
-  }
+    setCreateEmployeeData({ ...createEmployeeData, [id]: value });
+  };
 
-  render() {
-    return (
-      <div>
-        <h2>Create Employee</h2>
-        <form id="createEmployeeContainer">
-          <label htmlFor="forename">Forename</label>
-          <br />
-          <input
-            type="text"
-            id="forename"
-            placeholder="Forename"
-            value={this.state.forename}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="surname">Surname</label>
-          <br />
-          <input
-            type="text"
-            id="surname"
-            placeholder="Surname"
-            value={this.state.surname}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="email">Email</label>
-          <br />
-          <input
-            type="text"
-            id="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="phoneNumber">Phone Number</label>
-          <br />
-          <input
-            type="text"
-            id="phoneNumber"
-            placeholder="Phone Number"
-            value={this.state.phoneNumber}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="title">Title</label>
-          <br />
-          <input
-            type="text"
-            id="title"
-            placeholder="Title"
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="profileImage">Profile Image</label>
-          <br />
-          <input
-            type="text"
-            id="profileImage"
-            placeholder="Profile Image"
-            value={this.state.profileImage}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="departmentName">Department Name*</label>
-          <br />
-          <input
-            type="text"
-            id="departmentName"
-            placeholder="Department Name"
-            value={this.state.departmentName}
-            onChange={this.handleChange}
-          />
-          <CreateEmployeeRecordButton createEmployeeInput={this.state} />
-          <h6>
-            *For purposes of demonstration the department name is one of: Engineering, Security,
-            Sales, Anthropology, or Publishing{' '}
-          </h6>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h2>Create Employee</h2>
+      <form id="createEmployeeContainer">
+        <label htmlFor="forename">Forename</label>
+        <br />
+        <input
+          type="text"
+          id="forename"
+          placeholder="Forename"
+          value={createEmployeeData.forename}
+          onChange={handleCreateEmployeeChange}
+        />
+        <label htmlFor="surname">Surname</label>
+        <br />
+        <input
+          type="text"
+          id="surname"
+          placeholder="Surname"
+          value={createEmployeeData.surname}
+          onChange={handleCreateEmployeeChange}
+        />
+        <label htmlFor="email">Email</label>
+        <br />
+        <input
+          type="text"
+          id="email"
+          placeholder="Email"
+          value={createEmployeeData.email}
+          onChange={handleCreateEmployeeChange}
+        />
+        <label htmlFor="phoneNumber">Phone Number</label>
+        <br />
+        <input
+          type="text"
+          id="phoneNumber"
+          placeholder="Phone Number"
+          value={createEmployeeData.phoneNumber}
+          onChange={handleCreateEmployeeChange}
+        />
+        <label htmlFor="title">Title</label>
+        <br />
+        <input
+          type="text"
+          id="title"
+          placeholder="Title"
+          value={createEmployeeData.title}
+          onChange={handleCreateEmployeeChange}
+        />
+        <label htmlFor="profileImage">Profile Image</label>
+        <br />
+        <input
+          type="text"
+          id="profileImage"
+          placeholder="Profile Image"
+          value={createEmployeeData.profileImage}
+          onChange={handleCreateEmployeeChange}
+        />
+        <label htmlFor="departmentName">Department Name*</label>
+        <br />
+        <input
+          type="text"
+          id="departmentName"
+          placeholder="Department Name"
+          value={createEmployeeData.departmentName}
+          onChange={handleCreateEmployeeChange}
+        />
+        <CreateEmployeeRecordButton createEmployeeInput={createEmployeeData} />
+        <h6>
+          *For purposes of demonstration the department name is one of: Engineering, Security,
+          Sales, Anthropology, or Publishing{' '}
+        </h6>
+      </form>
+    </div>
+  );
+};
 
 export default CreateEmployee;

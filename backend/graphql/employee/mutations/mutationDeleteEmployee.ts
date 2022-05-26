@@ -21,9 +21,15 @@ export const MutationDeleteEmployeeResolver = {
     _parent: Employee,
     { input }: { input: Pick<Employee, 'id'>},
     context: Context,
-  ): Promise<Employee> => await context.prisma.employee.delete({
-    where: {
-      id: input.id,
-    },
-  }),
+  ): Promise<Employee> => {
+    try {
+      return await context.prisma.employee.delete({
+        where: {
+          id: input.id,
+        },
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
+},
 };
