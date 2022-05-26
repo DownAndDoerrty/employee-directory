@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Component, Dispatch, SetStateAction } from 'react';
 
-import { Employee } from '../../graphql/types/employeeType';
 import Button from '../Button';
 import '../../styles/EmployeeTableFooter.scss';
 
