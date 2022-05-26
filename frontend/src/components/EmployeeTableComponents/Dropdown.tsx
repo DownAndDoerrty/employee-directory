@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChangeEvent, Component, Dispatch, SetStateAction } from 'react';
+import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 interface DropdownProps {
   selectedDepartment: string;

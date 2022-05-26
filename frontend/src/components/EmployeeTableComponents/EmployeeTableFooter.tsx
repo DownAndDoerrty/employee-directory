@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Component, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 import Button from '../Button';
 import '../../styles/EmployeeTableFooter.scss';
