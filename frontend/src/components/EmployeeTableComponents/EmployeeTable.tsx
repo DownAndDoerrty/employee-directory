@@ -11,10 +11,11 @@ import { Employee } from '../../graphql/types/employeeType';
 const EmployeeTable = () => {
   const [pageNumber, setPageNumber] = useState(0);
   const [searchField, setSearchField] = useState('');
-  const [selectedEmployee, setSelectedEmployee] = useState([]);
+  const [selectedEmployees, setSelectedEmployees] = useState([]);
   const [limit, setLimit] = useState(10);
 
   const { loading, error, data } = useQuery(EMPLOYEES_QUERY);
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
 
@@ -25,7 +26,7 @@ const EmployeeTable = () => {
       ? data.employees.filter((employee: Employee) => {
           // Split each employee object into an array of it's values and then search that array for the substring
           return (Object.values(employee) as Array<string>).find((employeeArray) => {
-            if (employeeArray.includes(searchField)) {
+            if (employeeArray.toLowerCase().includes(searchField.toLowerCase())) {
               return employee;
             }
           });
@@ -41,19 +42,20 @@ const EmployeeTable = () => {
     (_v, i) => filteredEmployeeData.slice(i * limit, i * limit + limit)
   );
 
-  console.log({ selectedEmployee });
   return (
     <div>
       <table>
         <EmployeeTableHeader
           setSearchField={setSearchField}
+          selectedEmployees={selectedEmployees}
+          setSelectedEmployees={setSelectedEmployees}
           employeeCount={filteredEmployeeData.length}
         />
         <EmployeeTableBody
           employeeData={employeeData}
           pageNumber={pageNumber}
-          selectedEmployee={selectedEmployee}
-          setSelectedEmployee={setSelectedEmployee}
+          selectedEmployees={selectedEmployees}
+          setSelectedEmployees={setSelectedEmployees}
         />
         <EmployeeTableFooter
           pageNumber={pageNumber}

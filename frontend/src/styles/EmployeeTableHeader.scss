@@ -2,9 +2,25 @@
   border: none;
 }
 
-#searchInputContainer {
+#recordOperationsContainer {
+  text-align: right;
+  vertical-align: bottom;
+  padding: 0;
+}
+
+#recordOperationsContainer > * {
   text-align: end;
-  padding: 0.25rem 0;
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+#recordOperationsContainer > *:last-child {
+  background: var(--code);
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+#recordOperationsContainer > *:last-child:disabled {
+  background: var(--text-light);
 }
 
 #employeeDataContainer {

@@ -8,8 +8,8 @@ import '../../styles/EmployeeTableBody.scss';
 interface EmployeeTableBodyProps {
   employeeData: Array<Array<Employee>>;
   pageNumber: number;
-  selectedEmployee: Array<string>;
-  setSelectedEmployee: Dispatch<SetStateAction<Array<string>>>;
+  selectedEmployees: Array<string>;
+  setSelectedEmployees: Dispatch<SetStateAction<Array<string>>>;
 }
 
 class EmployeeTableBody extends Component<EmployeeTableBodyProps> {
@@ -20,19 +20,31 @@ class EmployeeTableBody extends Component<EmployeeTableBodyProps> {
   // Handle checkbox interaction for selecting employee
   handleSelectEmployee(id: string) {
     // Check if the currently selected employees include the ID that is being selected
-    if (this.props.selectedEmployee.includes(id)) {
+    if (this.props.selectedEmployees.includes(id)) {
       // If so, filter the list of employees and update the selection
-      const updatedSelectedEmployees = this.props.selectedEmployee.filter((employeeId) => {
+      const updatedSelectedEmployees = this.props.selectedEmployees.filter((employeeId) => {
         return employeeId !== id;
       });
-      this.props.setSelectedEmployee(updatedSelectedEmployees);
+      this.props.setSelectedEmployees(updatedSelectedEmployees);
     } else {
       // If not, add the employee ID to the current list of employees
-      this.props.setSelectedEmployee([...this.props.selectedEmployee, id]);
+      this.props.setSelectedEmployees([...this.props.selectedEmployees, id]);
     }
   }
 
   render() {
+    if (this.props.employeeData[this.props.pageNumber] === undefined)
+      return (
+        <tbody>
+          <tr key="noRecordsFound">
+            <td colSpan={7}>
+              <h3>Oh no! No Records Found.</h3>
+              <p>Please broaden your search.</p>
+            </td>
+          </tr>
+        </tbody>
+      );
+
     return (
       <tbody>
         {this.props.employeeData[this.props.pageNumber].map(

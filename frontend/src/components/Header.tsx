@@ -1,9 +1,12 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header id="headerContainer">
-      <h4>Employee Directory</h4>
+      <Link to="/">
+        <h3>Directory</h3>
+      </Link>
     </header>
   );
 };

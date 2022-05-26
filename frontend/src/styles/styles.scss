@@ -8,8 +8,13 @@ body {
   grid-template-columns: 24px 1fr 24px;
 }
 
-header > h4 {
+header > a > h4 {
   margin: 1vh 0vw;
+  width: max-content;
+}
+
+header {
+  width: min-content;
 }
 
 table {
@@ -25,8 +30,6 @@ td, th {
   height: 52px;
   width: 52px;
 }
-
-
 
 
 @media (max-width: 945px) {
