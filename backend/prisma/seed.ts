@@ -32,7 +32,7 @@ async function main(): Promise<void> {
     email: 'jeanne.tremblay@example.com',
     phoneNumber: '965-618-7152',
     profileImage: 'https://randomuser.me/api/portraits/women/20.jpg',
-    departmentId: Publishing.id,
+    departmentName: Publishing.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -42,7 +42,7 @@ async function main(): Promise<void> {
     email: 'tr.khrymy@example.com',
     phoneNumber: '0942-690-4559',
     profileImage: 'https://randomuser.me/api/portraits/women/57.jpg',
-    departmentId: Publishing.id,
+    departmentName: Publishing.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -52,7 +52,7 @@ async function main(): Promise<void> {
     email: 'eetu.halonen@example.com',
     phoneNumber: '046-832-84-21',
     profileImage: 'https://randomuser.me/api/portraits/men/44.jpg',
-    departmentId: Publishing.id,
+    departmentName: Publishing.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -62,7 +62,7 @@ async function main(): Promise<void> {
     email: 'heidi.dixon@example.com',
     phoneNumber: '0718-387-634',
     profileImage: 'https://randomuser.me/api/portraits/women/0.jpg',
-    departmentId: Publishing.id,
+    departmentName: Publishing.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -72,7 +72,7 @@ async function main(): Promise<void> {
     email: 'bernardete.silveira@example.com',
     phoneNumber: '(58) 6441-6175',
     profileImage: 'https://randomuser.me/api/portraits/women/21.jpg',
-    departmentId: Publishing.id,
+    departmentName: Publishing.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -82,7 +82,7 @@ async function main(): Promise<void> {
     email: 'cintia.silveira@example.com',
     phoneNumber: '(67) 9057-6146',
     profileImage: 'https://randomuser.me/api/portraits/women/45.jpg',
-    departmentId: Publishing.id,
+    departmentName: Publishing.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -92,7 +92,7 @@ async function main(): Promise<void> {
     email: 'eleanor.dixon@example.com',
     phoneNumber: '(967)-593-8822',
     profileImage: 'https://randomuser.me/api/portraits/women/31.jpg',
-    departmentId: Publishing.id,
+    departmentName: Publishing.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -102,7 +102,7 @@ async function main(): Promise<void> {
     email: 'sanni.anttila@example.com',
     phoneNumber: '048-393-41-89',
     profileImage: 'https://randomuser.me/api/portraits/women/78.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -112,7 +112,7 @@ async function main(): Promise<void> {
     email: 'benjamin.fortin@example.com',
     phoneNumber: '702-461-6610',
     profileImage: 'https://randomuser.me/api/portraits/men/57.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -122,7 +122,7 @@ async function main(): Promise<void> {
     email: 'noah.roberts@example.com',
     phoneNumber: '(827)-644-9449',
     profileImage: 'https://randomuser.me/api/portraits/men/21.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -132,7 +132,7 @@ async function main(): Promise<void> {
     email: 'enes.henry@example.com',
     phoneNumber: '079 731 15 47',
     profileImage: 'https://randomuser.me/api/portraits/men/27.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -142,7 +142,7 @@ async function main(): Promise<void> {
     email: 'virgilio.dasneves@example.com',
     phoneNumber: '(23) 7368-9475',
     profileImage: 'https://randomuser.me/api/portraits/men/20.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -152,7 +152,7 @@ async function main(): Promise<void> {
     email: 'romy.guerin@example.com',
     phoneNumber: '06-20-51-26-03',
     profileImage: 'https://randomuser.me/api/portraits/women/51.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -162,7 +162,7 @@ async function main(): Promise<void> {
     email: 'andreas.vanerkelens@example.com',
     phoneNumber: '(026)-599-2568',
     profileImage: 'https://randomuser.me/api/portraits/men/0.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -172,7 +172,7 @@ async function main(): Promise<void> {
     email: 'ivana.michel@example.com',
     phoneNumber: '079 646 49 78',
     profileImage: 'https://randomuser.me/api/portraits/women/13.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -182,7 +182,7 @@ async function main(): Promise<void> {
     email: 'luis.pascual@example.com',
     phoneNumber: '672-450-984',
     profileImage: 'https://randomuser.me/api/portraits/men/60.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -192,7 +192,7 @@ async function main(): Promise<void> {
     email: 'arndt.janssen@example.com',
     phoneNumber: '0176-4245414',
     profileImage: 'https://randomuser.me/api/portraits/men/18.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -202,7 +202,7 @@ async function main(): Promise<void> {
     email: 'benjamin.madsen@example.com',
     phoneNumber: '43439280',
     profileImage: 'https://randomuser.me/api/portraits/men/7.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -212,7 +212,7 @@ async function main(): Promise<void> {
     email: 'christian.garcia@example.com',
     phoneNumber: '633-008-774',
     profileImage: 'https://randomuser.me/api/portraits/men/35.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -222,7 +222,7 @@ async function main(): Promise<void> {
     email: 'besim.brunet@example.com',
     phoneNumber: '079 933 53 55',
     profileImage: 'https://randomuser.me/api/portraits/men/58.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -232,7 +232,7 @@ async function main(): Promise<void> {
     email: 'vildan.adivar@example.com',
     phoneNumber: '(780)-575-6003',
     profileImage: 'https://randomuser.me/api/portraits/women/76.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -242,7 +242,7 @@ async function main(): Promise<void> {
     email: 'emrullah.achterberg@example.com',
     phoneNumber: '(748)-814-4455',
     profileImage: 'https://randomuser.me/api/portraits/men/82.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -252,7 +252,7 @@ async function main(): Promise<void> {
     email: 'hunter.banks@example.com',
     phoneNumber: '0742-832-301',
     profileImage: 'https://randomuser.me/api/portraits/men/49.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -262,7 +262,7 @@ async function main(): Promise<void> {
     email: 'zack.ross@example.com',
     phoneNumber: '(814)-598-5262',
     profileImage: 'https://randomuser.me/api/portraits/men/74.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -272,7 +272,7 @@ async function main(): Promise<void> {
     email: 'herman.halland@example.com',
     phoneNumber: '91599561',
     profileImage: 'https://randomuser.me/api/portraits/men/32.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -282,7 +282,7 @@ async function main(): Promise<void> {
     email: 'noura.vanmulken@example.com',
     phoneNumber: '(402)-106-7136',
     profileImage: 'https://randomuser.me/api/portraits/women/42.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -292,7 +292,7 @@ async function main(): Promise<void> {
     email: 'kirk.nichols@example.com',
     phoneNumber: '081-790-0207',
     profileImage: 'https://randomuser.me/api/portraits/men/47.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -302,7 +302,7 @@ async function main(): Promise<void> {
     email: 'felecia.hughes@example.com',
     phoneNumber: '0490-949-187',
     profileImage: 'https://randomuser.me/api/portraits/women/33.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -312,7 +312,7 @@ async function main(): Promise<void> {
     email: 'emeli.helseth@example.com',
     phoneNumber: '90067706',
     profileImage: 'https://randomuser.me/api/portraits/women/4.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -322,7 +322,7 @@ async function main(): Promise<void> {
     email: 'valentin.ortiz@example.com',
     phoneNumber: '630-153-722',
     profileImage: 'https://randomuser.me/api/portraits/men/14.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -332,7 +332,7 @@ async function main(): Promise<void> {
     email: 'ahmed.arnaud@example.com',
     phoneNumber: '076 363 73 45',
     profileImage: 'https://randomuser.me/api/portraits/men/27.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -342,7 +342,7 @@ async function main(): Promise<void> {
     email: 'latife.tokatlioglu@example.com',
     phoneNumber: '(255)-511-9425',
     profileImage: 'https://randomuser.me/api/portraits/women/92.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -352,7 +352,7 @@ async function main(): Promise<void> {
     email: 'sophia.holland@example.com',
     phoneNumber: '0726-478-217',
     profileImage: 'https://randomuser.me/api/portraits/women/69.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -362,7 +362,7 @@ async function main(): Promise<void> {
     email: 'hanny.junghans@example.com',
     phoneNumber: '0171-0213743',
     profileImage: 'https://randomuser.me/api/portraits/women/68.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -372,7 +372,7 @@ async function main(): Promise<void> {
     email: 'pablo.lefebvre@example.com',
     phoneNumber: '06-50-93-23-04',
     profileImage: 'https://randomuser.me/api/portraits/men/39.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -382,7 +382,7 @@ async function main(): Promise<void> {
     email: 'severino.dacosta@example.com',
     phoneNumber: '(96) 0739-4248',
     profileImage: 'https://randomuser.me/api/portraits/men/22.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -392,7 +392,7 @@ async function main(): Promise<void> {
     email: 'alexandre.taylor@example.com',
     phoneNumber: '613-986-6075',
     profileImage: 'https://randomuser.me/api/portraits/men/16.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -402,7 +402,7 @@ async function main(): Promise<void> {
     email: 'manuel.washington@example.com',
     phoneNumber: '0760-791-638',
     profileImage: 'https://randomuser.me/api/portraits/men/7.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -412,7 +412,7 @@ async function main(): Promise<void> {
     email: 'david.carmona@example.com',
     phoneNumber: '618-594-466',
     profileImage: 'https://randomuser.me/api/portraits/men/52.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -422,7 +422,7 @@ async function main(): Promise<void> {
     email: 'emre.ertepinar@example.com',
     phoneNumber: '(385)-827-3424',
     profileImage: 'https://randomuser.me/api/portraits/men/0.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -432,7 +432,7 @@ async function main(): Promise<void> {
     email: 'gokhan.akyuz@example.com',
     phoneNumber: '(807)-569-5032',
     profileImage: 'https://randomuser.me/api/portraits/men/63.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -442,7 +442,7 @@ async function main(): Promise<void> {
     email: 'gabriel.legrand@example.com',
     phoneNumber: '06-57-16-76-25',
     profileImage: 'https://randomuser.me/api/portraits/men/85.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -452,7 +452,7 @@ async function main(): Promise<void> {
     email: 'melvin.picard@example.com',
     phoneNumber: '06-29-22-38-27',
     profileImage: 'https://randomuser.me/api/portraits/men/57.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -462,7 +462,7 @@ async function main(): Promise<void> {
     email: 'rhm.njty@example.com',
     phoneNumber: '0939-810-5635',
     profileImage: 'https://randomuser.me/api/portraits/men/93.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -472,7 +472,7 @@ async function main(): Promise<void> {
     email: 'benjamin.breiland@example.com',
     phoneNumber: '97280970',
     profileImage: 'https://randomuser.me/api/portraits/men/3.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -482,7 +482,7 @@ async function main(): Promise<void> {
     email: 'mhn.zraay@example.com',
     phoneNumber: '0982-268-5938',
     profileImage: 'https://randomuser.me/api/portraits/men/57.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -492,7 +492,7 @@ async function main(): Promise<void> {
     email: 'wilma.kuhr@example.com',
     phoneNumber: '0171-1663141',
     profileImage: 'https://randomuser.me/api/portraits/women/34.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -502,7 +502,7 @@ async function main(): Promise<void> {
     email: 'muhamed.francois@example.com',
     phoneNumber: '077 453 08 20',
     profileImage: 'https://randomuser.me/api/portraits/men/89.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -512,7 +512,7 @@ async function main(): Promise<void> {
     email: 'johan.thomsen@example.com',
     phoneNumber: '27852859',
     profileImage: 'https://randomuser.me/api/portraits/men/47.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -522,7 +522,7 @@ async function main(): Promise<void> {
     email: 'frenk.koeman@example.com',
     phoneNumber: '(943)-637-2360',
     profileImage: 'https://randomuser.me/api/portraits/men/33.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -532,7 +532,7 @@ async function main(): Promise<void> {
     email: 'dean.lucas@example.com',
     phoneNumber: '0763-693-370',
     profileImage: 'https://randomuser.me/api/portraits/men/59.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -542,7 +542,7 @@ async function main(): Promise<void> {
     email: 'seth.bradley@example.com',
     phoneNumber: '(344)-300-0551',
     profileImage: 'https://randomuser.me/api/portraits/men/49.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -552,7 +552,7 @@ async function main(): Promise<void> {
     email: 'inacio.santos@example.com',
     phoneNumber: '(32) 5355-6404',
     profileImage: 'https://randomuser.me/api/portraits/men/24.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -562,7 +562,7 @@ async function main(): Promise<void> {
     email: 'maja.blanc@example.com',
     phoneNumber: '078 290 92 95',
     profileImage: 'https://randomuser.me/api/portraits/women/52.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -572,7 +572,7 @@ async function main(): Promise<void> {
     email: 'coskun.karaer@example.com',
     phoneNumber: '(243)-361-5575',
     profileImage: 'https://randomuser.me/api/portraits/men/97.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -582,7 +582,7 @@ async function main(): Promise<void> {
     email: 'oliver.wilson@example.com',
     phoneNumber: '769-208-9316',
     profileImage: 'https://randomuser.me/api/portraits/men/81.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -592,7 +592,7 @@ async function main(): Promise<void> {
     email: 'eugen.esser@example.com',
     phoneNumber: '0173-2617849',
     profileImage: 'https://randomuser.me/api/portraits/men/84.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -602,7 +602,7 @@ async function main(): Promise<void> {
     email: 'aitor.alonso@example.com',
     phoneNumber: '667-931-996',
     profileImage: 'https://randomuser.me/api/portraits/men/3.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -612,7 +612,7 @@ async function main(): Promise<void> {
     email: 'marlon.martinez@example.com',
     phoneNumber: '077 602 89 07',
     profileImage: 'https://randomuser.me/api/portraits/men/8.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -622,7 +622,7 @@ async function main(): Promise<void> {
     email: 'selena.augestad@example.com',
     phoneNumber: '48930846',
     profileImage: 'https://randomuser.me/api/portraits/women/15.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -632,7 +632,7 @@ async function main(): Promise<void> {
     email: 'thn.rdyy@example.com',
     phoneNumber: '0967-507-9089',
     profileImage: 'https://randomuser.me/api/portraits/women/0.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -642,7 +642,7 @@ async function main(): Promise<void> {
     email: 'april.hall@example.com',
     phoneNumber: '0438-248-579',
     profileImage: 'https://randomuser.me/api/portraits/women/90.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -652,7 +652,7 @@ async function main(): Promise<void> {
     email: 'rafael.jackson@example.com',
     phoneNumber: '081-637-8443',
     profileImage: 'https://randomuser.me/api/portraits/men/29.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -662,7 +662,7 @@ async function main(): Promise<void> {
     email: 'gregorio.fernandez@example.com',
     phoneNumber: '670-634-781',
     profileImage: 'https://randomuser.me/api/portraits/men/52.jpg',
-    departmentId: Anthropology.id,
+    departmentName: Anthropology.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -672,7 +672,7 @@ async function main(): Promise<void> {
     email: 'emilie.petersen@example.com',
     phoneNumber: '79146389',
     profileImage: 'https://randomuser.me/api/portraits/women/1.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -682,7 +682,7 @@ async function main(): Promise<void> {
     email: 'marjorie.brooks@example.com',
     phoneNumber: '(823)-399-3456',
     profileImage: 'https://randomuser.me/api/portraits/women/13.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -692,7 +692,7 @@ async function main(): Promise<void> {
     email: 'elin.ovretveit@example.com',
     phoneNumber: '95319694',
     profileImage: 'https://randomuser.me/api/portraits/women/51.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -702,7 +702,7 @@ async function main(): Promise<void> {
     email: 'ernst.rosendahl@example.com',
     phoneNumber: '0174-6306020',
     profileImage: 'https://randomuser.me/api/portraits/men/41.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -712,7 +712,7 @@ async function main(): Promise<void> {
     email: 'adem.karabocek@example.com',
     phoneNumber: '(047)-938-5300',
     profileImage: 'https://randomuser.me/api/portraits/men/42.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -722,7 +722,7 @@ async function main(): Promise<void> {
     email: 'leo.cooper@example.com',
     phoneNumber: '(724)-445-7496',
     profileImage: 'https://randomuser.me/api/portraits/men/96.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -732,7 +732,7 @@ async function main(): Promise<void> {
     email: 'carmela.nicolas@example.com',
     phoneNumber: '076 249 52 27',
     profileImage: 'https://randomuser.me/api/portraits/women/21.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -742,7 +742,7 @@ async function main(): Promise<void> {
     email: 'hasan.cappelen@example.com',
     phoneNumber: '47453005',
     profileImage: 'https://randomuser.me/api/portraits/men/75.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -752,7 +752,7 @@ async function main(): Promise<void> {
     email: 'axel.robert@example.com',
     phoneNumber: '06-64-63-57-94',
     profileImage: 'https://randomuser.me/api/portraits/men/65.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -762,7 +762,7 @@ async function main(): Promise<void> {
     email: 'daniel.parker@example.com',
     phoneNumber: '(488)-101-9488',
     profileImage: 'https://randomuser.me/api/portraits/men/17.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -772,7 +772,7 @@ async function main(): Promise<void> {
     email: 'thom.volwater@example.com',
     phoneNumber: '(263)-620-1382',
     profileImage: 'https://randomuser.me/api/portraits/men/90.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -782,7 +782,7 @@ async function main(): Promise<void> {
     email: 'angela.ramirez@example.com',
     phoneNumber: '0758-538-641',
     profileImage: 'https://randomuser.me/api/portraits/women/21.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -792,7 +792,7 @@ async function main(): Promise<void> {
     email: 'josh.newman@example.com',
     phoneNumber: '0720-368-631',
     profileImage: 'https://randomuser.me/api/portraits/men/46.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -802,7 +802,7 @@ async function main(): Promise<void> {
     email: 'edeltraut.niermann@example.com',
     phoneNumber: '0171-6220898',
     profileImage: 'https://randomuser.me/api/portraits/women/49.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -812,7 +812,7 @@ async function main(): Promise<void> {
     email: 'brent.gibson@example.com',
     phoneNumber: '0790-800-737',
     profileImage: 'https://randomuser.me/api/portraits/men/44.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -822,7 +822,7 @@ async function main(): Promise<void> {
     email: 'anouk.lecomte@example.com',
     phoneNumber: '079 142 60 37',
     profileImage: 'https://randomuser.me/api/portraits/women/24.jpg',
-    departmentId: Sales.id,
+    departmentName: Sales.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -832,7 +832,7 @@ async function main(): Promise<void> {
     email: 'maxence.carpentier@example.com',
     phoneNumber: '06-05-09-64-36',
     profileImage: 'https://randomuser.me/api/portraits/men/56.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -842,7 +842,7 @@ async function main(): Promise<void> {
     email: 'javier.burns@example.com',
     phoneNumber: '0419-082-723',
     profileImage: 'https://randomuser.me/api/portraits/men/57.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -852,7 +852,7 @@ async function main(): Promise<void> {
     email: 'tinius.johannessen@example.com',
     phoneNumber: '94315049',
     profileImage: 'https://randomuser.me/api/portraits/men/78.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -862,7 +862,7 @@ async function main(): Promise<void> {
     email: 'zoe.smith@example.com',
     phoneNumber: '407-947-3093',
     profileImage: 'https://randomuser.me/api/portraits/women/69.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -872,7 +872,7 @@ async function main(): Promise<void> {
     email: 'malou.thomsen@example.com',
     phoneNumber: '78739810',
     profileImage: 'https://randomuser.me/api/portraits/women/51.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -882,7 +882,7 @@ async function main(): Promise<void> {
     email: 'ece.yesilkaya@example.com',
     phoneNumber: '(260)-418-3696',
     profileImage: 'https://randomuser.me/api/portraits/women/41.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -892,7 +892,7 @@ async function main(): Promise<void> {
     email: 'barcino.barros@example.com',
     phoneNumber: '(15) 8128-0237',
     profileImage: 'https://randomuser.me/api/portraits/men/26.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -902,7 +902,7 @@ async function main(): Promise<void> {
     email: 'brittany.armstrong@example.com',
     phoneNumber: '0493-344-026',
     profileImage: 'https://randomuser.me/api/portraits/women/95.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -912,7 +912,7 @@ async function main(): Promise<void> {
     email: 'marianne.stokstad@example.com',
     phoneNumber: '41938565',
     profileImage: 'https://randomuser.me/api/portraits/women/8.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -922,7 +922,7 @@ async function main(): Promise<void> {
     email: 'helena.sanchez@example.com',
     phoneNumber: '06-97-30-39-31',
     profileImage: 'https://randomuser.me/api/portraits/women/46.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -932,7 +932,7 @@ async function main(): Promise<void> {
     email: 'maudi.tosun@example.com',
     phoneNumber: '(054)-319-7457',
     profileImage: 'https://randomuser.me/api/portraits/women/72.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -942,7 +942,7 @@ async function main(): Promise<void> {
     email: 'patrick.morris@example.com',
     phoneNumber: '(152)-578-7480',
     profileImage: 'https://randomuser.me/api/portraits/men/56.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -952,7 +952,7 @@ async function main(): Promise<void> {
     email: 'hilda.kelly@example.com',
     phoneNumber: '0487-211-079',
     profileImage: 'https://randomuser.me/api/portraits/women/7.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -962,7 +962,7 @@ async function main(): Promise<void> {
     email: 'laura.francois@example.com',
     phoneNumber: '076 568 80 28',
     profileImage: 'https://randomuser.me/api/portraits/women/26.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -972,7 +972,7 @@ async function main(): Promise<void> {
     email: 'thea.pedersen@example.com',
     phoneNumber: '23867858',
     profileImage: 'https://randomuser.me/api/portraits/women/69.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -982,7 +982,7 @@ async function main(): Promise<void> {
     email: 'veronica.watkins@example.com',
     phoneNumber: '(035)-408-0499',
     profileImage: 'https://randomuser.me/api/portraits/women/43.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -992,7 +992,7 @@ async function main(): Promise<void> {
     email: 'ceylan.ozgorkey@example.com',
     phoneNumber: '(132)-874-9045',
     profileImage: 'https://randomuser.me/api/portraits/women/80.jpg',
-    departmentId: Security.id,
+    departmentName: Security.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -1002,7 +1002,7 @@ async function main(): Promise<void> {
     email: 'emily.vargas@example.com',
     phoneNumber: '(947)-475-9168',
     profileImage: 'https://randomuser.me/api/portraits/women/80.jpg',
-    departmentId: Engineering.id,
+    departmentName: Engineering.name,
   }});
   await prisma.employee.create({ data: {
     id: uuidv4(),
@@ -1012,7 +1012,7 @@ async function main(): Promise<void> {
     email: 'kjelt.ceelen@example.com',
     phoneNumber: '(136)-903-1468',
     profileImage: 'https://randomuser.me/api/portraits/men/33.jpg',
-    departmentId: Publishing.id,
+    departmentName: Publishing.name,
   }});
 }
 

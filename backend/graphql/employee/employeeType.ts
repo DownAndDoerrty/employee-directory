@@ -9,7 +9,7 @@ export const EmployeeTypeDefinition = gql`
     surname:      String
     profileImage: String
     title:        String
-    departmentId:   String
+    departmentName:   String
     department:   Department
     createdAt:   DateTime
     updatedAt:   DateTime

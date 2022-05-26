@@ -14,7 +14,7 @@ export const UpdateEmployeeMutationDefinition = gql`
     surname:      String
     profileImage: String
     title:        String
-    departmentId: String
+    departmentName: String
   }
   
   type Mutation {
