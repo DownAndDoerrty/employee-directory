@@ -20,7 +20,7 @@ const CreateEmployeeRecordButton = (props: { createEmployeeInput: CreateEmployee
     event.preventDefault();
     createEmployee({ variables: { ...input } })
       .then(() => {
-        console.log({ data });
+        alert('Success! Employee record created');
       })
       .catch((e) => {
         // Throw error if creation failed
@@ -71,7 +71,6 @@ class CreateEmployee extends Component<unknown, CreateEmployeeMutationType> {
   handleChange(event) {
     const { id, value } = event.target;
     this.setState((prevState) => ({ ...prevState, [id]: value }));
-    console.log(this.state);
   }
 
   render() {

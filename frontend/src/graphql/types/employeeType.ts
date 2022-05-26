@@ -6,7 +6,5 @@ export type Employee = {
   surname: string;
   profileImage: string;
   title: string;
-  department: {
-    name: string;
-  };
+  departmentName: string;
 };

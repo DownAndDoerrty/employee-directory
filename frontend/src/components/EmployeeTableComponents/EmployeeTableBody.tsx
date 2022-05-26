@@ -6,7 +6,7 @@ import DirectoryImage from './DirectoryImage';
 import '../../styles/EmployeeTableBody.scss';
 
 interface EmployeeTableBodyProps {
-  employeeData: Array<Array<Employee>>;
+  employeeData: Array<Employee>;
   pageNumber: number;
   selectedEmployees: Array<string>;
   setSelectedEmployees: Dispatch<SetStateAction<Array<string>>>;
@@ -33,7 +33,7 @@ class EmployeeTableBody extends Component<EmployeeTableBodyProps> {
   }
 
   render() {
-    if (this.props.employeeData[this.props.pageNumber] === undefined)
+    if (this.props.employeeData === undefined)
       return (
         <tbody>
           <tr key="noRecordsFound">
@@ -47,8 +47,8 @@ class EmployeeTableBody extends Component<EmployeeTableBodyProps> {
 
     return (
       <tbody>
-        {this.props.employeeData[this.props.pageNumber].map(
-          ({ id, email, forename, surname, profileImage, title, phoneNumber }) => (
+        {this.props.employeeData.map(
+          ({ id, email, forename, surname, profileImage, title, phoneNumber, departmentName }) => (
             <tr key={email}>
               <td>
                 <input
@@ -63,6 +63,7 @@ class EmployeeTableBody extends Component<EmployeeTableBodyProps> {
               <td>{forename}</td>
               <td>{surname}</td>
               <td>{title}</td>
+              <td>{departmentName}</td>
               <td>{email}</td>
               <td>{phoneNumber}</td>
             </tr>

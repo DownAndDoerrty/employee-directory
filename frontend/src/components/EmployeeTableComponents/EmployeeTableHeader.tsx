@@ -6,7 +6,6 @@ import '../../styles/EmployeeTableHeader.scss';
 import { DELETE_EMPLOYEE_MUTATION } from '../../graphql/deleteEmployeeMutation';
 import { EMPLOYEES_QUERY } from '../../graphql/employeesQuery';
 import { useNavigate } from 'react-router-dom';
-import SearchInput from './SearchInput';
 import Button from '../Button';
 
 const RecordOperations = (props: {
@@ -53,15 +52,14 @@ const RecordOperations = (props: {
   );
 };
 
-interface EmployeeTableFooterProps {
+interface EmployeeTableHeaderProps {
   employeeCount: number;
   selectedEmployees: Array<string>;
   setSelectedEmployees: Dispatch<SetStateAction<Array<string>>>;
-  setSearchField: Dispatch<SetStateAction<string>>;
 }
 
-class EmployeeTableHeader extends Component<EmployeeTableFooterProps> {
-  constructor(props: EmployeeTableFooterProps | Readonly<EmployeeTableFooterProps>) {
+class EmployeeTableHeader extends Component<EmployeeTableHeaderProps> {
+  constructor(props: EmployeeTableHeaderProps | Readonly<EmployeeTableHeaderProps>) {
     super(props);
   }
 
@@ -69,9 +67,8 @@ class EmployeeTableHeader extends Component<EmployeeTableFooterProps> {
     return (
       <thead>
         <tr id="tableInfoContainer">
-          <td colSpan={4} id="employeeDataContainer">
-            <p>Total Employees: {this.props.employeeCount}</p>
-            <SearchInput setSearchField={this.props.setSearchField} />
+          <td colSpan={5} id="employeeDataContainer">
+            <h5 id="employeeCountContainer">Employees: {this.props.employeeCount}</h5>
           </td>
           <RecordOperations
             selectedEmployees={this.props.selectedEmployees}
@@ -84,6 +81,7 @@ class EmployeeTableHeader extends Component<EmployeeTableFooterProps> {
           <th>Forename</th>
           <th>Surname</th>
           <th>Job Title</th>
+          <th>Department</th>
           <th>Email</th>
           <th>Phone Number</th>
         </tr>

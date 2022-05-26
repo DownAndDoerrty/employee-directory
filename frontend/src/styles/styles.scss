@@ -31,6 +31,12 @@ td, th {
   width: 52px;
 }
 
+#inputAndDropdownContainer {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+}
+
 
 @media (max-width: 945px) {
   #directoryImage, #directoryImageCell, #directoryImageHeader {

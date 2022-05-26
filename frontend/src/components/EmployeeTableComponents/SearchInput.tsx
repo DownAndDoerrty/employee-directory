@@ -12,16 +12,18 @@ class SearchInput extends Component<SearchInputProps> {
 
   // Handle searching for records
   handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     this.props.setSearchField(e.target.value);
   };
 
   render() {
     return (
-      <div>
+      <div id="inputAndDropdownContainer">
+        <label htmlFor="employeeSearchInput">Search by forename</label>
         <input
           type="search"
           name="employeeSearchInput"
-          placeholder="Search Employees"
+          placeholder="Search Employees by Forename"
           onChange={(e) => this.handleSearchInputChange(e)}
         />
       </div>
