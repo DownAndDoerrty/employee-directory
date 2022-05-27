@@ -24,4 +24,4 @@ This should setup your Postgres database, create the Prisma client, seed your da
 
 Run `./bin/run.sh` in the employee-directory project root from your terminal.
 
-This run your frontend, backend, and ensure your database is running.
+This should run your frontend, backend, and ensure your database is running.
