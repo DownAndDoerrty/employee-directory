@@ -7,7 +7,8 @@ import EmployeeTableFooter from './EmployeeTableFooter';
 import EmployeeTableBody from './EmployeeTableBody';
 import { EMPLOYEES_QUERY } from '../../graphql/employeesQuery';
 import Dropdown from './Dropdown';
-import SearchInput from './SearchInput';
+import SearchInput from '../SearchInput';
+import '../../styles/EmployeeTable.scss';
 
 const EmployeeTable = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -30,12 +31,27 @@ const EmployeeTable = () => {
 
   return (
     <div>
-      <SearchInput setSearchField={setSearchField} />
-      <Dropdown
-        selectedDepartment={selectedDepartment}
-        setSelectedDepartment={setSelectedDepartment}
-        departments={data?.departments}
-      />
+      <div id="headerInputsContainer">
+        <SearchInput
+          setSearchField={setSearchField}
+          label={'Search by Forename'}
+          placeholder={'Search Employees by Forename'}
+        />
+        <Dropdown
+          label="Select Department"
+          defaultValue="All"
+          selected={selectedDepartment}
+          setSelected={setSelectedDepartment}
+          departments={data?.departments}>
+          {data?.departments
+            ? data?.departments.map(({ name }) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))
+            : null}
+        </Dropdown>
+      </div>
       {loading ? (
         <p>Loading...</p>
       ) : (

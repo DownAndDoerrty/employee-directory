@@ -1,34 +1,31 @@
 import * as React from 'react';
-import { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import { ChangeEvent, Dispatch, ReactNode, SetStateAction } from 'react';
 
 interface DropdownProps {
-  selectedDepartment: string;
-  setSelectedDepartment: Dispatch<SetStateAction<string>>;
+  selected: string;
+  setSelected: Dispatch<SetStateAction<string>>;
   departments: Array<{ name: string }> | undefined;
+  defaultValue: string;
+  children: ReactNode;
+  label: string;
 }
 
 const Dropdown = (props: DropdownProps) => {
   const handleDropdownChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    props.setSelectedDepartment(event.target.value);
+    props.setSelected(event.target.value);
   };
 
   return (
     <div id="inputAndDropdownContainer">
-      <label htmlFor="departmentDropdown">Select Department</label>
+      <label htmlFor="dropdown">{props.label}</label>
       <select
-        name="departmentDropdown"
+        name="dropdown"
         onChange={(event) => handleDropdownChange(event)}
-        value={props.selectedDepartment}>
-        <option key="All" value="All">
-          All
+        value={props.selected}>
+        <option key={props.defaultValue} value={props.defaultValue}>
+          {props.defaultValue}
         </option>
-        {props.departments
-          ? props.departments.map(({ name }) => (
-              <option key={name} value={name}>
-                {name}
-              </option>
-            ))
-          : null}
+        {props.children}
       </select>
     </div>
   );

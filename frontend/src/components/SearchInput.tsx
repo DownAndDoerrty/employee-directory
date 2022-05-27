@@ -3,6 +3,8 @@ import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 interface SearchInputProps {
   setSearchField: Dispatch<SetStateAction<string>>;
+  label: string;
+  placeholder: string;
 }
 
 const SearchInput = (props: SearchInputProps) => {
@@ -13,11 +15,11 @@ const SearchInput = (props: SearchInputProps) => {
 
   return (
     <div id="inputAndDropdownContainer">
-      <label htmlFor="employeeSearchInput">Search by forename</label>
+      <label htmlFor="searchInput">{props.label}</label>
       <input
         type="search"
-        name="employeeSearchInput"
-        placeholder="Search Employees by Forename"
+        name="searchInput"
+        placeholder={props.placeholder}
         onChange={(e) => handleSearchInputChange(e)}
       />
     </div>
