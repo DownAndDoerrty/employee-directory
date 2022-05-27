@@ -118,7 +118,9 @@ const CreateEmployee = () => {
           value={createEmployeeData.title}
           onChange={handleCreateEmployeeChange}
         />
-        <label htmlFor="profileImage">Profile Image</label>
+        <label htmlFor="profileImage">
+          Profile Image<strong>*</strong>
+        </label>
         <br />
         <input
           type="text"
@@ -127,7 +129,9 @@ const CreateEmployee = () => {
           value={createEmployeeData.profileImage}
           onChange={handleCreateEmployeeChange}
         />
-        <label htmlFor="departmentName">Department Name*</label>
+        <label htmlFor="departmentName">
+          Department Name<strong>**</strong>
+        </label>
         <br />
         <input
           type="text"
@@ -137,10 +141,19 @@ const CreateEmployee = () => {
           onChange={handleCreateEmployeeChange}
         />
         <CreateEmployeeRecordButton createEmployeeInput={createEmployeeData} />
-        <h6>
-          *For purposes of demonstration the department name is one of: Engineering, Security,
-          Sales, Anthropology, or Publishing{' '}
-        </h6>
+        <p>
+          <strong>*</strong> You will need to provide the link to an image.{' '}
+          <a
+            href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/2010-kodiak-bear-1.jpg/1200px-2010-kodiak-bear-1.jpg"
+            target="_blank"
+            rel="noreferrer">
+            Here is one
+          </a>{' '}
+          for your convenience.
+          <br />
+          <strong>**</strong> For purposes of demonstration the department name is one of:
+          Engineering, Security, Sales, Anthropology, or Publishing.
+        </p>
       </form>
     </div>
   );

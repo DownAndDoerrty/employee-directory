@@ -14,6 +14,7 @@ interface EmployeeTableFooterProps {
 }
 
 const EmployeeTableFooter = (props: EmployeeTableFooterProps) => {
+  // Set offset and page number on button click
   const handleButtonClick = (key: number) => {
     props.setOffset(key * props.limit);
     props.setPageNumber(key);
@@ -37,7 +38,10 @@ const EmployeeTableFooter = (props: EmployeeTableFooterProps) => {
   return (
     <tfoot>
       <tr>
-        <td colSpan={8} id="tableButtonContainer">
+        <td colSpan={4} id="employeeDataContainer">
+          <h5 id="employeeCountContainer">Employees: {props.employeeRecordsCount}</h5>
+        </td>
+        <td colSpan={4} id="tableButtonContainer">
           <Button
             handleClick={() => handleButtonClick(props.pageNumber - 1)}
             text="<"

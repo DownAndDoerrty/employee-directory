@@ -3,9 +3,26 @@
   flex-direction: row;
 }
 
-#inputAndDropdownContainer {
+.searchInputContainer {
   width: 30%;
+  height: 100%;
+}
+
+.dropdownContainer {
+  width: 15%;
+  height: 100%;
+}
+
+.recordOperationsContainer {
+  display: inline-flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+#inputAndDropdownContainer {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   margin: 0 1rem
 }

@@ -1,6 +1,7 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "employee-directory-frontend",
+  "version": "1.0.0",
+  "description": "Employee directory frontend",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.4",

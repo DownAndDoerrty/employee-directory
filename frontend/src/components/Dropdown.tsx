@@ -2,9 +2,8 @@ import * as React from 'react';
 import { ChangeEvent, Dispatch, ReactNode, SetStateAction } from 'react';
 
 interface DropdownProps {
-  selected: string;
-  setSelected: Dispatch<SetStateAction<string>>;
-  departments: Array<{ name: string }> | undefined;
+  selected: string | number;
+  setSelected: Dispatch<SetStateAction<string | number>>;
   defaultValue: string;
   children: ReactNode;
   label: string;
@@ -16,7 +15,7 @@ const Dropdown = (props: DropdownProps) => {
   };
 
   return (
-    <div id="inputAndDropdownContainer">
+    <div id="inputAndDropdownContainer" className="dropdownContainer">
       <label htmlFor="dropdown">{props.label}</label>
       <select
         name="dropdown"

@@ -32,6 +32,10 @@ td, th {
   width: 52px;
 }
 
+strong {
+  color: var(--code);
+}
+
 @media (max-width: 945px) {
   #directoryImage, #directoryImageCell, #directoryImageHeader {
     display: none;

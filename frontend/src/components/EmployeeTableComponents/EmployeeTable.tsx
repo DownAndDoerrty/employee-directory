@@ -2,13 +2,14 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 
+import '../../styles/EmployeeTable.scss';
+import { EMPLOYEES_QUERY } from '../../graphql/employeesQuery';
 import EmployeeTableHeader from './EmployeeTableHeader';
 import EmployeeTableFooter from './EmployeeTableFooter';
 import EmployeeTableBody from './EmployeeTableBody';
-import { EMPLOYEES_QUERY } from '../../graphql/employeesQuery';
-import Dropdown from './Dropdown';
+import Dropdown from '../Dropdown';
 import SearchInput from '../SearchInput';
-import '../../styles/EmployeeTable.scss';
+import RecordOperations from './RecordOperations';
 
 const EmployeeTable = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -21,7 +22,7 @@ const EmployeeTable = () => {
   const { loading, error, data } = useQuery(EMPLOYEES_QUERY, {
     variables: {
       offset: offset,
-      limit: limit,
+      limit: Number(limit),
       departmentName: selectedDepartment,
       searchField: searchField
     }
@@ -38,11 +39,10 @@ const EmployeeTable = () => {
           placeholder={'Search Employees by Forename'}
         />
         <Dropdown
-          label="Select Department"
+          label="Department"
           defaultValue="All"
           selected={selectedDepartment}
-          setSelected={setSelectedDepartment}
-          departments={data?.departments}>
+          setSelected={setSelectedDepartment}>
           {data?.departments
             ? data?.departments.map(({ name }) => (
                 <option key={name} value={name}>
@@ -51,18 +51,24 @@ const EmployeeTable = () => {
               ))
             : null}
         </Dropdown>
+        <Dropdown label="Rows" defaultValue="10" selected={limit} setSelected={setLimit}>
+          {[25, 50].map((rowNumber) => (
+            <option key={rowNumber} value={rowNumber}>
+              {rowNumber}
+            </option>
+          ))}
+        </Dropdown>
+        <RecordOperations
+          selectedEmployees={selectedEmployees}
+          setSelectedEmployees={setSelectedEmployees}
+        />
       </div>
       {loading ? (
         <p>Loading...</p>
       ) : (
         <div>
           <table>
-            <EmployeeTableHeader
-              selectedEmployees={selectedEmployees}
-              setSelectedEmployees={setSelectedEmployees}
-              employeeCount={data.employees.count}
-            />
-
+            <EmployeeTableHeader />
             <EmployeeTableBody
               employeeData={data.employees.records}
               pageNumber={pageNumber}

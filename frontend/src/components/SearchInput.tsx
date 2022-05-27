@@ -14,7 +14,7 @@ const SearchInput = (props: SearchInputProps) => {
   };
 
   return (
-    <div id="inputAndDropdownContainer">
+    <div id="inputAndDropdownContainer" className="searchInputContainer">
       <label htmlFor="searchInput">{props.label}</label>
       <input
         type="search"

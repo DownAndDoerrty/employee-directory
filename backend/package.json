@@ -1,7 +1,7 @@
 {
   "name": "employee-directory-backend",
   "version": "1.0.0",
-  "description": "Employee directory frontend for Postlight challenge",
+  "description": "Employee directory backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
