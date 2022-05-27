@@ -5,7 +5,7 @@ services:
     volumes:
       - postgres_database:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: app
+      POSTGRES_DB: employee-directory-db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:

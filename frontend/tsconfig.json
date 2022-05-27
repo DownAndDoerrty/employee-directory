@@ -9,7 +9,10 @@
     "allowJs": true,
     "module": "es6",
     "target": "es5",
-    "lib": ["es2018", "DOM"]
+    "lib": ["es2018", "DOM"],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
   },
   "include": [
     "src/**/*.ts",
