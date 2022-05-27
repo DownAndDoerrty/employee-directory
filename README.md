@@ -13,14 +13,15 @@
 
 ---
 
-## To start project
+## To setup the project
 
-Add a `.env` file in the `/backend` directory that contains an exported `DATABASE_URL`. The credentials in the URL should reflect those found in your `docker-compose.yml` file in the project root.
-
-Then, from the employee-directory project root run the following commands in your terminal:
-
-1. `docker-compose up`
-2. `./bin/setup.sh`
-3. `./bin/run.sh`
+1. Add a `.env` file in the `/backend` directory that contains an exported `DATABASE_URL`. There is an example `.env` file provided in the `/backend` directory. The credentials in the URL should reflect those found in your `docker-compose.yml` file in the project root.
+2. From the employee-directory project root run `./bin/setup.sh` in your terminal
 
 This should setup your Postgres database, create the Prisma client, seed your database, and install all necessary node modules.
+
+## To start the entire project
+
+Run `./bin/run.sh` in the employee-directory project root from your terminal.
+
+This should setup your frontend, backend, and ensure your database is running.

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Creating Postgres Database"
+docker-compose up -d
+
 echo "Setting up backend"
 cd backend
 rm -rf node_modules
